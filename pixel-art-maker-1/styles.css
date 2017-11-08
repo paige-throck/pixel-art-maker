@@ -1,9 +1,13 @@
 
 body {
-  background-color: LightGray;
+  background:linear-gradient(to right, #556270, #ff6b6b);
 }
 
 h3{
+  text-align: center;
+  font-family: Chalkduster, fantasy;
+}
+h4{
   text-align: center;
   font-family: Chalkduster, fantasy;
 }

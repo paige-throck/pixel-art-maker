@@ -1,7 +1,7 @@
 let pixelGrid = document.getElementById('pixelGrid');
 
 
-for (i=0; i < 2500; i++){
+for (i=0; i < 2706; i++){
   let pixel = document.createElement('div');
   pixel.classList.add('pixel');
   pixelGrid.appendChild(pixel);
