@@ -13,6 +13,7 @@ h4 {
 }
 
 #pixelGrid {
+  display:block;
   width: 810px;
   height: 510px;
   border-spacing: 1px;

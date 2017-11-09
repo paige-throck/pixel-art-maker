@@ -18,11 +18,10 @@ function setPenColour(pen) {
 
 
 
-pixelGrid.addEventListener('mouseover', function() {
-  event.target.style.backgroundColor = penColour;
-  if (event.target !== pixel){
-    return grey;
-}
+pixelGrid.addEventListener('mouseover', function(event) {
+    if (event.target !== this){
+    event.target.style.backgroundColor = penColour;
+  }
 });
 
 
