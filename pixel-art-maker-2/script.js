@@ -1,7 +1,7 @@
 let pixelGrid = document.getElementById('pixelGrid');
 
 
-for (i=0; i < 2706; i++){
+for (i = 0; i < 2418; i++) {
   let pixel = document.createElement('div');
   pixel.classList.add('pixel');
   pixelGrid.appendChild(pixel);
@@ -9,17 +9,20 @@ for (i=0; i < 2706; i++){
 
 
 let penColour = 'black';
+
 function setPenColour(pen) {
   penColour = pen;
   let currentColourPen = document.getElementById('currentPen');
   currentColourPen.style.backgroundColor = penColour;
-  }
+}
 
 
 
-pixelGrid.addEventListener('click', function() {
+pixelGrid.addEventListener('mouseover', function() {
   event.target.style.backgroundColor = penColour;
-
+  if (event.target !== pixel){
+    return grey;
+}
 });
 
 

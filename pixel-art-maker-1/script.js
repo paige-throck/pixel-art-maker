@@ -1,3 +1,4 @@
+let pixelGrid = document.getElementById('pixelGrid');
 let penColour = 'black';
 
 function setPenColour(pen) {
@@ -6,16 +7,14 @@ function setPenColour(pen) {
   currentColourPen.style.backgroundColor = penColour;
 }
 
-let pixelGrid = document.getElementById('pixelGrid');
-pixelGrid.addEventListener('click', function() {
+pixelGrid.addEventListener('mouseover', function() {
   event.target.style.backgroundColor = penColour;
-
 });
 
 
 function clearPixelGrid() {
   let pixels = document.getElementsByClassName('pixel');
-  console.log("Pixels foo", pixels);
+  // console.log("Pixels foo", pixels);
   Array.from(pixels).forEach(function(pixel) {
     pixel.style.backgroundColor = 'white';
   });
