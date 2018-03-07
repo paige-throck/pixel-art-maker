@@ -8,7 +8,7 @@ for (i = 0; i < 2418; i++) {
 }
 
 
-let penColour = 'black';
+let penColour;
 
 function setPenColour(pen) {
   penColour = pen;
@@ -16,28 +16,68 @@ function setPenColour(pen) {
   currentColourPen.style.backgroundColor = penColour;
 }
 
-
-
-pixelGrid.addEventListener('mouseover', function(event) {
-    if (event.target !== this){
+pixelGrid.addEventListener('click', function(event) {
+  if (event.target !== this) {
     event.target.style.backgroundColor = penColour;
   }
 });
 
+let isDown;
 
-function clearPixelGrid() {
-  let pixels = document.getElementsByClassName('pixel');
-  console.log("Pixels foo", pixels);
-  Array.from(pixels).forEach(function(pixel) {
-    pixel.style.backgroundColor = 'white';
-  });
-  // for (var i = 0; i < pixels.length; i++) {
-  //   let pixel = pixels[i];
-  //   pixel.style.backgroundColor = 'white';
-  // }
+function paintBrushDown (pixels){
+  isDown = true;
 }
 
-let clearButton = document.getElementById('clearButton');
-clearButton.addEventListener('click', function() {
-  clearPixelGrid();
-});
+function paintBrushUp (){
+  isDown = false;
+}
+
+function paintBrushMove (pixels){
+  if (isDown){
+    pixels.target.style.backgroundColor = penColour;
+  }
+}
+
+pixelGrid.addEventListener('mousedown', paintBrushDown);
+pixelGrid.addEventListener('mouseup', paintBrushUp);
+pixelGrid.addEventListener('mouseover', paintBrushMove);
+
+// let drawButton = document.getElementById('drawButton');
+// drawButton.addEventListener('click', function() {
+//   drawPixelGrid();
+// });
+// //
+// //
+// function drawPixelGrid() {
+//   pixelGrid.addEventListener('click', function(event) {
+//     if (event.target !== this) {
+//       event.target.style.backgroundColor = penColour;
+//     }
+//   });
+// //
+//   let paintButton = document.getElementById('paintButton');
+//   paintButton.addEventListener('click', function() {
+//     paintPixelGrid();
+//   });
+// //
+//   function paintPixelGrid() {
+//     pixelGrid.addEventListener('mouseover', function(event) {
+//       if (event.target !== this) {
+//         event.target.style.backgroundColor = penColour;
+//
+//       }
+//     });
+
+
+    function clearPixelGrid() {
+      let pixels = document.getElementsByClassName('pixel');
+      console.log("Pixels foo", pixels);
+      Array.from(pixels).forEach(function(pixel) {
+        pixel.style.backgroundColor = 'white';
+      });
+    }
+
+    let clearButton = document.getElementById('clearButton');
+    clearButton.addEventListener('click', function() {
+      clearPixelGrid();
+    });
