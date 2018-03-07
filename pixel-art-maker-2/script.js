@@ -42,31 +42,7 @@ pixelGrid.addEventListener('mousedown', paintBrushDown);
 pixelGrid.addEventListener('mouseup', paintBrushUp);
 pixelGrid.addEventListener('mouseover', paintBrushMove);
 
-// let drawButton = document.getElementById('drawButton');
-// drawButton.addEventListener('click', function() {
-//   drawPixelGrid();
-// });
-// //
-// //
-// function drawPixelGrid() {
-//   pixelGrid.addEventListener('click', function(event) {
-//     if (event.target !== this) {
-//       event.target.style.backgroundColor = penColour;
-//     }
-//   });
-// //
-//   let paintButton = document.getElementById('paintButton');
-//   paintButton.addEventListener('click', function() {
-//     paintPixelGrid();
-//   });
-// //
-//   function paintPixelGrid() {
-//     pixelGrid.addEventListener('mouseover', function(event) {
-//       if (event.target !== this) {
-//         event.target.style.backgroundColor = penColour;
-//
-//       }
-//     });
+
 
 
     function clearPixelGrid() {
