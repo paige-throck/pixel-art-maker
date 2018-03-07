@@ -8,7 +8,7 @@ for (i = 0; i < 2418; i++) {
 }
 
 
-let penColour;
+let penColour = "black";
 
 function setPenColour(pen) {
   penColour = pen;
